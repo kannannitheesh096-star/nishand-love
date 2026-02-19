@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nishand 🤍 Livina</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background: linear-gradient(to top, #0f2027, #203a43, #2c5364);
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+        }
+
+        .container {
+            position: relative;
+            top: 15vh;
+            z-index: 2;
+        }
+
+        h1 {
+            font-size: 40px;
+        }
+
+        p {
+            font-size: 20px;
+            width: 80%;
+            margin: auto;
+        }
+
+        img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 4px solid white;
+            margin-top: 20px;
+        }
+
+        button {
+            margin-top: 25px;
+            padding: 12px 25px;
+            font-size: 18px;
+            border: none;
+            border-radius: 25px;
+            background-color: pink;
+            color: black;
+            cursor: pointer;
+        }
+
+        /* Falling Hearts */
+        .heart {
+            position: absolute;
+            color: red;
+            font-size: 20px;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(-10vh); opacity: 1; }
+            100% { transform: translateY(110vh); opacity: 0; }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Background Music -->
+<audio autoplay loop>
+    <source src="love.mp3" type="audio/mpeg">
+</audio>
+
+<div class="container">
+    <h1>Nishand 🤍Livina</h1>
+
+    <!-- Replace livina.jpg with your photo name -->
+    <img src="livina.jpg" alt="Livina Photo">
+
+    <p>
+        Livina... 💖  
+        Nee en life la vandhadhu enakku biggest blessing.  
+        Un sirippu enakku strength.  
+        Un kooda dhan naan full ah happy.  
+        I want to be with you forever.
+    </p>
+
+    <button onclick="proposal()">Will You Marry Me? 💍</button>
+</div>
+
+<script>
+function proposal() {
+    alert("Livina 💖 Will you be mine forever? - Nishand");
+}
+
+/* Create Falling Hearts */
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "🤍";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 5000);
+}
+
+setInterval(createHeart, 300);
+</script>
+
+</body>
+</html>
